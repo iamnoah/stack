@@ -1,0 +1,37 @@
+/* fix the outline to the right side and show it when hovered over */
+.outline {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	max-width: 50%;
+	opacity: 0;
+	padding: 10px 20px 10px 35px;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+
+     -webkit-transition: opacity 0.5s ease;
+        -moz-transition: opacity 0.5s ease;
+         -ms-transition: opacity 0.5s ease;
+          -o-transition: opacity 0.5s ease;
+             transition: opacity 0.5s ease;
+    z-index: 9000;
+}
+
+.outline:hover {
+	opacity: 1;
+	-moz-opacity: 1;
+	filter:alpha(opacity=1);
+}
+
+.outline a:link {
+	color: #000;
+	text-decoration: none;
+}
+
+.outline a:hover {
+	color: #ccc;
+	cursor: pointer;
+}
