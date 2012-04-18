@@ -1,8 +1,8 @@
 // creates a hierarchical outline from all the h1, h2, and h3 elements (first one per slide)
 (function() {
 	var h1 = [], h2 = [], position = -1,
-		outline = d3.select('body').append('ol').
-			classed('outline',true);
+		outline = d3.select('body').
+			append('ol').classed('outline',true);
 	// for each slide, find the first header element and stick it in the outline
 	// XXX slides without a header get left out
 	d3.selectAll("section").each(function() {
@@ -54,6 +54,14 @@
 					on('click',scrollTo(position));
 		}
 	});
+
+	d3.select('body').
+		append('div').classed('outlineTrigger',true).
+		html('Toggle Outline').
+		on('click',function() {
+			var body = d3.select('body');
+			body.classed('showOutline',!body.classed('showOutline'));
+		});
 
 	function scrollTo(pos) {
 		return function() {

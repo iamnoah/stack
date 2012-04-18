@@ -2,12 +2,33 @@
 .outline {
 	background-color: #fff;
 	border: 1px solid #ccc;
+	max-height: 100%;
 	max-width: 50%;
-	opacity: 0;
+	overflow: auto;
 	padding: 10px 20px 10px 35px;
 	position: fixed;
 	top: 10px;
 	right: 10px;
+	z-index: 9000;
+}
+
+.outlineTrigger {
+	background-color: transparent;
+	color: #f26322;
+	cursor: pointer;
+	height: auto;
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	width: auto;
+
+    z-index: 9001;
+}
+
+
+.outline,
+.outlineTrigger {
+	opacity: 0;
 
 	-moz-opacity: 0;
 	filter:alpha(opacity=0);
@@ -17,10 +38,11 @@
          -ms-transition: opacity 0.5s ease;
           -o-transition: opacity 0.5s ease;
              transition: opacity 0.5s ease;
-    z-index: 9000;
 }
 
-.outline:hover {
+.showOutline .outline,
+.showOutline .outlineTrigger,
+.outlineTrigger:hover {
 	opacity: 1;
 	-moz-opacity: 1;
 	filter:alpha(opacity=1);
