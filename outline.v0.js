@@ -16,7 +16,7 @@
 			li = outline.append('li');
 			li.append('a').
 				html(header.innerHTML).
-				property('href','#').
+				property('href','#'+d3.select(header).text().replace(/\s+/g,'_')).
 				on('click',scrollTo(position));
 			h1.push({
 				tag: header,
@@ -33,7 +33,7 @@
 			li = list.append('li');
 			li.append('a').
 				html(header.innerHTML).
-				property('href','#').
+				property('href','#'+d3.select(header).text().replace(/\s+/g,'_')).
 				on('click',scrollTo(position));
 
 			h2.push({
@@ -50,7 +50,7 @@
 			list.append('li').
 				append('a').
 					html(header.innerHTML).
-					property('href','#').
+					property('href','#'+d3.select(header).text().replace(/\s+/g,'_')).
 					on('click',scrollTo(position));
 		}
 	});

@@ -8,6 +8,7 @@
 	padding: 10px 20px 10px 35px;
 	position: fixed;
 	top: 10px;
+	resize: both;
 	right: 10px;
 	z-index: 9000;
 }
